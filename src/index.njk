@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Portfolio
+---
+<section class="projects-grid">
+  {% for project in collections.projects %}
+    <a href="{{ project.url }}" class="project-row">
+      <div class="project-row__name">{{ project.data.title }}</div>
+      <div class="project-row__image{% if project.data.image_layout %} project-row__image--{{ project.data.image_layout }}{% endif %}" {% if project.data.image_bg %}style="background: {{ project.data.image_bg }}"{% endif %}>
+        {% if project.data.images and project.data.images.length %}
+          <img src="{{ project.url }}{{ project.data.images[0].src }}" alt="{{ project.data.images[0].alt }}">
+        {% endif %}
+      </div>
+      <div class="project-row__gap"></div>
+      <div class="project-row__client">{{ project.data.client }}</div>
+      <div class="project-row__type">{{ project.data.type }}</div>
+      <div class="project-row__gap"></div>
+    </a>
+  {% endfor %}
+</section>

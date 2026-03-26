@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}Vendela</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="site-name">Vendela</a>
+    <nav class="site-nav">
+      <a href="/">Work</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
